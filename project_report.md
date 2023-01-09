@@ -62,7 +62,7 @@
 
 ### Train dataset pairplot
 
-![My Image](images/train-pairplot.jpeg)
+![My Image](images/train-pairplot.png)
 
 
     1. Training dataset has 10,886 rows of data and 12 features
@@ -96,7 +96,7 @@
 ![My Image](images/newfeatures-model-leaderboard.png)
 
     4. WeightedEnseble still scored topped the model leaderboard with new features as well.
-    5. After submitting the initial model, we got a score of 1.33117 
+    5. After submitting the model trained with new features, we got a score of 1.33117 
       
 
 ## Retrain model with hyperparameters (num_bag_folds=5, num_bag_sets=1, num_stack_levels=1)
@@ -108,8 +108,8 @@
 
 ![My Image](images/hyperparam-model-leaderboard.png)
 
-    4. WeightedEnseble still scored topped the model leaderboard with new features as well.
-    5. After submitting the initial model, we got a score of 1.32531 
+    4. WeightedEnseble still scored topped the model leaderboard with new features & hyperparameters as well.
+    5. After submitting the model trained with new features and hyperparameters, we got a score of 1.32531 
     
 
 ## Retrain model with hyperparameters (num_bag_folds=10, num_bag_sets=2, num_stack_levels=2)
@@ -120,7 +120,13 @@
         num_bag_sets(2)= Number of repeats of kfold bagging to perform. Total number of models trained during bagging = num_bag_folds * num_bag_sets. 
         num_stack_levels (2)= Number of stacking levels to use in stack ensemble. Roughly increases model training time by factor of num_stack_levels+1
         
-        
+![My Image](images/hyperparamv2-model-leaderboard.png)
+
+    2. WeightedEnseble still scored topped the model leaderboard with new features and hyperparamters updated values as well.
+    3. After submitting the model trained with new features and hyperparameters, we got a score of 1.31903 
+
+
+
 ## Model Score visualization
 
 ### model-score-table
