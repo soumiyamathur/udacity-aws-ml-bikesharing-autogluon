@@ -139,8 +139,8 @@
         
 ![My Image](images/hyperparamv3-model-leaderboard.png)
 
-    2. WeightedEnseble still scored topped the model leaderboard with new features and hyperparamters updated values as well.
-    3. After submitting the model trained with new features and hyperparameters, we got a score of 1.32147 
+    4. WeightedEnseble still scored topped the model leaderboard with new features and hyperparamters updated values as well.
+    5. After submitting the model trained with new features and hyperparameters, we got a score of 1.32147 
 
 
 
