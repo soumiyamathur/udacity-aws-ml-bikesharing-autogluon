@@ -123,7 +123,24 @@
 ![My Image](images/hyperparamv2-model-leaderboard.png)
 
     2. WeightedEnseble still scored topped the model leaderboard with new features and hyperparamters updated values as well.
-    3. After submitting the model trained with new features and hyperparameters, we got a score of 1.31903 
+    3. After submitting the model trained with new features and hyperparameters, we got a score of 1.32230 
+
+
+
+## Retrain model with hyperparameters (num_bag_folds=5, num_bag_sets=1, num_stack_levels=1,hyperparameters=hyperparameters, hyperparameter_tune_kwargs='auto')
+
+    1. For the third iteration with hyperparameters, following params were changed:
+        
+        num_bag_folds(5)= Number of folds used for bagging of models, to avoid overfitting, keeping the value to 10
+        num_bag_sets(1)= Number of repeats of kfold bagging to perform. Total number of models trained during bagging = num_bag_folds * num_bag_sets. 
+        num_stack_levels (1)= Number of stacking levels to use in stack ensemble. Roughly increases model training time by factor of num_stack_levels+1
+    2. Used hyperparameter argument for model fitting and updated few learning rate default values for XGBoost and GBM models with new values with  
+    3. Also used argument for hyperparameter tuning strategy set to "auto" to use random presets for hyperparameter default values and space.
+        
+![My Image](images/hyperparamv3-model-leaderboard.png)
+
+    2. WeightedEnseble still scored topped the model leaderboard with new features and hyperparamters updated values as well.
+    3. After submitting the model trained with new features and hyperparameters, we got a score of 1.32147 
 
 
 
@@ -135,9 +152,19 @@
 
 ### model-score-visualization
 
-![My Image](images/model-score-viz.png)
+![My Image](images/model-score-val-viz.png)
 
+### model-kaggle-score-visualization
 
-    1. WeightedEnsemble_L3 model is on top in the model leaderboard for all three runs.
+![My Image](images/model-kaggle-score-viz.png)
+
+    1. WeightedEnsemble_L3 model is on top in the model leaderboard for all four runs.
     2. Model score improved after adding new features (month, day, year) derived from datetime.
     3. Hyperparameters tuning only improved the score slightly.
+    4. Utilizing hyperparameter tuning strategy argument made the score a bit better and reach to kaggle score 1.32147
+    5. The initial submitted model scored the lowest due to the fact that we didn't do any feature enginnering for the training dataset. 
+    6. Feature Enginnering did the most to gain considerably with model scoring, we can further deep dive and pick one feature out of "season vs weather" or "workingday vs holiday", this might help in improving the score as these features seems to be redundant and might be overfitting the models.
+    7. Utilizing hyper parameters added value, but updating presets for hyperparamter (model learning rate) didn't add much of value.
+    8. For future run, I would like to deep dive with Feature Engineering and pick some feature over other in training data than tweaking the hyperparameter presents.
+    9. We can also look at data and check for skewness, highly skewed data can be removed from the training set to avoid model overfitting.
+    
